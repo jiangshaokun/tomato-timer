@@ -1,0 +1,14 @@
+.option {
+    background-color: #2ba6cb;
+    border: 1px solid #1e728c;
+    width: 248px;
+    height: 42px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.option:hover, .option:focus {
+    background-color: #2284a1;
+}
