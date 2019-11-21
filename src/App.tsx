@@ -10,62 +10,81 @@ const App: React.FC = () => {
   const [timer, setTimer] = useState()
 
   const timerStart = () => {
-    if (timer) return
+    if (timer) timerStop()
 
-    setTimer(setInterval(() => {
-      setDuration(prevDuration => {
-        return prevDuration - 1
-      })
-    }, 1000))
+    setTimer(
+      setInterval(() => {
+        setDuration(prevDuration => {
+          return prevDuration - 1
+        })
+      }, 1000)
+    )
   }
 
   const timerStop = () => {
-    if (timer) {
-      setTimer(clearInterval(timer))
-    }
+    timer && clearInterval(timer)
   }
   const timerReset = () => {
-    if (timer) {
-      setTimer(clearInterval(timer))
-    }
-
+    timerStop()
     setDuration(initDuration)
   }
 
   const resetTimer = (minutes: number) => {
-    if (timer) {
-      setTimer(clearInterval(timer))
-    }
-
     setInitDuration(minutes * 60)
     setDuration(minutes * 60)
-
     timerStart()
   }
 
-  /**
-   * 获取时间文本
-   * @param duration 时长，单位：秒
-   */
   const getText = (duration: number) => {
     let minute = Math.floor(duration / 60)
     let second = duration % 60
     return `${minute} : ${second < 10 ? `0${second}` : second}`
   }
 
+  const options = [
+    {
+      text: '番茄',
+      handleOptionClick: () => {resetTimer(25)}
+    },{
+      text: '5分钟',
+      handleOptionClick: () => {resetTimer(5)}
+    },{
+      text: '10分钟',
+      handleOptionClick: () => {resetTimer(10)}
+    },
+  ]
+  const optionsItem = options.map(option =>
+    <Option key={option.text} text={option.text} handleOptionClick={option.handleOptionClick}/>
+  )
+
+  const buttons = [
+    {
+      text: '开始',
+      type: 'success',
+      handleClick: timerStart
+    },{
+      text: '暂停',
+      type: 'danger',
+      handleClick: timerStop
+    },{
+      text: '重置',
+      type: 'normal',
+      handleClick: timerReset
+    },
+  ]
+  const buttonsItem = buttons.map(button =>
+    <Button key={button.text} type={button.type} text={button.text} handleClick={button.handleClick}/>
+  )
+
   return (
     <div className='app'>
       <h2 className='header'>番茄钟</h2>
       <div className='option-groups'>
-        <Option text='番茄' handleOptionClick={() => {resetTimer(25)}}/>
-        <Option text='5分钟' handleOptionClick={() => {resetTimer(5)}}/>
-        <Option text='10分钟' handleOptionClick={() => {resetTimer(10)}}/>
+        {optionsItem}
       </div>
       <h1 className='timer-text'>{getText(duration)}</h1>
       <div className='btn-groups'>
-        <Button type='success' text='开始' handleClick={timerStart}/>
-        <Button type='danger' text='停止' handleClick={timerStop}/>
-        <Button type='normal' text='重置' handleClick={timerReset}/>
+        {buttonsItem}
       </div>
     </div>
   )
