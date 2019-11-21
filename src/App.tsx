@@ -1,15 +1,26 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Button from './components/Button'
 import Option from './components/Option'
 import './App.css'
+import Fish from './fish.jpg'
 
 const App: React.FC = () => {
   const [initDuration, setInitDuration] = useState(1500)
   const [duration, setDuration] = useState(1500)
   const [timer, setTimer] = useState()
 
+  useEffect(() => {
+    if (duration === 0) {
+      new Notification(`奈斯! ${initDuration} 分钟计时结束！`, {
+        icon: Fish
+      })
+      timerStop()
+    }
+  })
+
   const timerStart = () => {
+    if (duration === 0) timerReset()
     if (timer) timerStop()
 
     setTimer(
