@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Button from './components/Button'
 import Option from './components/Option'
 import './App.css'
-import Fish from './fish.jpg'
+import Logo from './logo.svg'
 
 const App: React.FC = () => {
   const [initDuration, setInitDuration] = useState(1500)
@@ -46,8 +46,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (duration === 0) {
-      new Notification(`奈斯! ${getText(initDuration)} 分钟计时结束！`, {
-        icon: Fish
+      new Notification(`奈斯! ${getText(initDuration)} 计时结束！`, {
+        icon: Logo
       })
       timerStop()
     }
