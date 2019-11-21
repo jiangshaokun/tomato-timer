@@ -10,14 +10,15 @@ const App: React.FC = () => {
   const [duration, setDuration] = useState(1500)
   const [timer, setTimer] = useState()
 
-  useEffect(() => {
-    if (duration === 0) {
-      new Notification(`奈斯! ${initDuration} 分钟计时结束！`, {
-        icon: Fish
-      })
-      timerStop()
-    }
-  })
+  const getText = (duration: number) => {
+    let minute = Math.floor(duration / 60)
+    let second = duration % 60
+    return `${minute} : ${second < 10 ? `0${second}` : second}`
+  }
+
+  const timerStop = () => {
+    timer && clearInterval(timer)
+  }
 
   const timerStart = () => {
     if (duration === 0) timerReset()
@@ -32,9 +33,6 @@ const App: React.FC = () => {
     )
   }
 
-  const timerStop = () => {
-    timer && clearInterval(timer)
-  }
   const timerReset = () => {
     timerStop()
     setDuration(initDuration)
@@ -46,11 +44,14 @@ const App: React.FC = () => {
     timerStart()
   }
 
-  const getText = (duration: number) => {
-    let minute = Math.floor(duration / 60)
-    let second = duration % 60
-    return `${minute} : ${second < 10 ? `0${second}` : second}`
-  }
+  useEffect(() => {
+    if (duration === 0) {
+      new Notification(`奈斯! ${getText(initDuration)} 分钟计时结束！`, {
+        icon: Fish
+      })
+      timerStop()
+    }
+  })
 
   const options = [
     {
