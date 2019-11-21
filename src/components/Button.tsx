@@ -1,10 +1,11 @@
 import React from 'react'
+
 import './Button.css'
 
 type Props = {
     type?: string
     text: string
-    cb: () => void
+    handleClick: () => void
 }
 
 const Button: React.FC<Props> = (props) => {
@@ -15,7 +16,7 @@ const Button: React.FC<Props> = (props) => {
     }
 
     return (
-        <button onClick={props.cb} className={className}>{props.text}</button>
+        <button onClick={props.handleClick} className={className}>{props.text}</button>
     )
 }
 
