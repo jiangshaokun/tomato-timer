@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = (props) => {
-    let className = 'btn'
+    let className: string = 'btn'
 
     if (props.type) {
         className += ` btn-${props.type}`
