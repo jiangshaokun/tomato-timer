@@ -1,5 +1,5 @@
 .option {
-    background-color: #2ba6cb;
+    background-color: #17a2b8;
     border: 1px solid #1e728c;
     width: 248px;
     height: 42px;
@@ -10,5 +10,6 @@
 }
 
 .option:hover, .option:focus {
-    background-color: #2284a1;
+    background-color: #117a8b;
+    border-color: #10707f;
 }
