@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Button.css'
 
-type Props = {
+interface Props {
     type?: string
     text: string
     handleClick: () => void

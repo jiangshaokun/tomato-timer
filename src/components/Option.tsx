@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Option.css'
 
-type Props = {
+interface Props {
   text: string
   handleClick: () => void
 }

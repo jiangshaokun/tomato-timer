@@ -10,9 +10,9 @@ const App: React.FC = () => {
   const [duration, setDuration] = useState(1500)
   const [timer, setTimer] = useState()
 
-  const getText = (duration: number) => {
-    let minute = Math.floor(duration / 60)
-    let second = duration % 60
+  const getText = (duration: number): string => {
+    let minute: number = Math.floor(duration / 60)
+    let second: number = duration % 60
     return `${minute} : ${second < 10 ? `0${second}` : second}`
   }
 
@@ -56,7 +56,7 @@ const App: React.FC = () => {
   const options = [
     {
       text: '番茄',
-      handleClick: () => {resetTimer(25)}
+      handleClick: () => {resetTimer(25)},
     },{
       text: '短休息',
       handleClick: () => {resetTimer(5)}
@@ -80,7 +80,7 @@ const App: React.FC = () => {
       handleClick: timerStop
     },{
       text: '重置',
-      type: 'normal',
+      type: 'default',
       handleClick: timerReset
     },
   ]
