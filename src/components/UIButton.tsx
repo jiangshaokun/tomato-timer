@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Button.css'
+import './UIButton.css'
 
 type Props = {
     type?: string
@@ -8,7 +8,7 @@ type Props = {
     handleClick: () => void
 }
 
-const Button: React.FC<Props> = (props) => {
+const UIButton: React.FC<Props> = (props) => {
     let className = 'btn'
 
     if (props.type) {
@@ -20,4 +20,4 @@ const Button: React.FC<Props> = (props) => {
     )
 }
 
-export default Button
+export default UIButton

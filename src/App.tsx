@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import Button from './components/Button'
-import Option from './components/Option'
+import UIButton from './components/UIButton'
+import UIOption from './components/UIOption'
 import './App.css'
 import Logo from './logo.svg'
 
@@ -66,7 +66,7 @@ const App: React.FC = () => {
     },
   ]
   const optionsItem = options.map(option =>
-    <Option key={option.text} text={option.text} handleOptionClick={option.handleOptionClick}/>
+    <UIOption key={option.text} text={option.text} handleOptionClick={option.handleOptionClick}/>
   )
 
   const buttons = [
@@ -85,7 +85,7 @@ const App: React.FC = () => {
     },
   ]
   const buttonsItem = buttons.map(button =>
-    <Button key={button.text} type={button.type} text={button.text} handleClick={button.handleClick}/>
+    <UIButton key={button.text} type={button.type} text={button.text} handleClick={button.handleClick}/>
   )
 
   return (
