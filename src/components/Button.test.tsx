@@ -1,4 +1,4 @@
-import UIButton from './UIButton'
+import Button from './Button'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TestRenderer from 'react-test-renderer'
@@ -6,7 +6,7 @@ import {act, Simulate} from 'react-dom/test-utils'
 
 // 分支测试
 it('传了type，类名应该包含btn-type', () => {
-  const component = <UIButton text={'A button'} type={'danger'} handleClick={() => {}} />
+  const component = <Button text={'A button'} type={'danger'} handleClick={() => {}} />
 
   const testRenderer = TestRenderer.create(component)
 
@@ -14,8 +14,8 @@ it('传了type，类名应该包含btn-type', () => {
   const className = str && str.props.className
   expect(className).toMatch('btn-danger')
 })
-it('没传type，类名应该包含btn-type', () => {
-  const component = <UIButton text={'A button'} handleClick={() => {}} />
+it('没传type，类名只是btn', () => {
+  const component = <Button text={'A button'} handleClick={() => {}} />
 
   const testRenderer = TestRenderer.create(component)
 
@@ -25,9 +25,9 @@ it('没传type，类名应该包含btn-type', () => {
 })
 
 // 参数测试
-it('按钮文案与参数相等', () => {
+it('按钮文案与传参相等', () => {
   const text = '一个按钮'
-  const component = <UIButton text={text} handleClick={() => {}} />
+  const component = <Button text={text} handleClick={() => {}} />
 
   const testRenderer = TestRenderer.create(component)
 
@@ -38,9 +38,9 @@ it('按钮文案与参数相等', () => {
 })
 
 // 事件测试
-it('回调正常点击', () => {
+it('回调点击正常响应', () => {
   const handleClick = jest.fn()
-  const component = <UIButton text={'A button'} handleClick={handleClick} />
+  const component = <Button text={'A button'} handleClick={handleClick} />
   const container = document.createElement('div')
   act(() => {
     ReactDOM.render(component, container)
