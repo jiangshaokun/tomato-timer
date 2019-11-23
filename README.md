@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tomato Timer, 一个简洁的番茄钟网页。适用于番茄工作法(The pomodoro technique)。
+
+![番茄钟](./tomato-timer.png)
 
 ## Available Scripts
 
