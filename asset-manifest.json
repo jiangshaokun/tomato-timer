@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tomato-timer/static/css/main.e64d44ab.chunk.css",
+    "main.js": "/tomato-timer/static/js/main.1d18fb95.chunk.js",
+    "main.js.map": "/tomato-timer/static/js/main.1d18fb95.chunk.js.map",
+    "runtime-main.js": "/tomato-timer/static/js/runtime-main.7a8afa0b.js",
+    "runtime-main.js.map": "/tomato-timer/static/js/runtime-main.7a8afa0b.js.map",
+    "static/js/2.ffb9a024.chunk.js": "/tomato-timer/static/js/2.ffb9a024.chunk.js",
+    "static/js/2.ffb9a024.chunk.js.map": "/tomato-timer/static/js/2.ffb9a024.chunk.js.map",
+    "index.html": "/tomato-timer/index.html",
+    "precache-manifest.348cdf4b00ba6de74194e73b0d24de0d.js": "/tomato-timer/precache-manifest.348cdf4b00ba6de74194e73b0d24de0d.js",
+    "service-worker.js": "/tomato-timer/service-worker.js",
+    "static/css/main.e64d44ab.chunk.css.map": "/tomato-timer/static/css/main.e64d44ab.chunk.css.map",
+    "static/media/logo.svg": "/tomato-timer/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a8afa0b.js",
+    "static/js/2.ffb9a024.chunk.js",
+    "static/css/main.e64d44ab.chunk.css",
+    "static/js/main.1d18fb95.chunk.js"
+  ]
+}
