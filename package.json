@@ -2,6 +2,7 @@
   "name": "tomato-timer",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://jiangshaokun.github.io/tomato-timer",
   "dependencies": {
     "@types/jest": "24.0.19",
     "@types/node": "12.11.7",
