@@ -7,7 +7,7 @@ interface Props {
   handleClick: () => void
 }
 
-const Option:React.FC<Props> = (props) => {
+const Option: React.FC<Props> = (props) => {
   return (
     <button className="option" onClick={props.handleClick}>{props.text}</button>
   )

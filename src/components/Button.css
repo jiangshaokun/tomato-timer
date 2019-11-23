@@ -7,7 +7,8 @@
     font-weight: bold;
     cursor: pointer;
 }
-.btn:hover,.btn:focus {
+
+.btn:hover, .btn:focus {
     background-color: #dae0e5;
     border-color: #d3d9df;
 }

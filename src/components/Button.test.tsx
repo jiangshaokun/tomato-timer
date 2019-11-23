@@ -2,11 +2,12 @@ import Button from './Button'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TestRenderer from 'react-test-renderer'
-import {act, Simulate} from 'react-dom/test-utils'
+import { act, Simulate } from 'react-dom/test-utils'
 
 // 分支测试
 it('传了type，类名应该包含btn-type', () => {
-  const component = <Button text={'A button'} type={'danger'} handleClick={() => {}} />
+  const component = <Button text={'A button'} type={'danger'}
+                            handleClick={() => {}} />
 
   const testRenderer = TestRenderer.create(component)
 
@@ -42,6 +43,7 @@ it('回调点击正常响应', () => {
   const handleClick = jest.fn()
   const component = <Button text={'A button'} handleClick={handleClick} />
   const container = document.createElement('div')
+
   act(() => {
     ReactDOM.render(component, container)
   })

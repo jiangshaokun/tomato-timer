@@ -56,17 +56,18 @@ const App: React.FC = () => {
   const options = [
     {
       text: '番茄',
-      handleClick: () => {resetTimer(25)},
-    },{
+      handleClick: () => {resetTimer(25)}
+    }, {
       text: '短休息',
       handleClick: () => {resetTimer(5)}
-    },{
+    }, {
       text: '长休息',
       handleClick: () => {resetTimer(10)}
-    },
+    }
   ]
   const optionsItem = options.map(option =>
-    <Option key={option.text} text={option.text} handleClick={option.handleClick}/>
+    <Option key={option.text} text={option.text}
+            handleClick={option.handleClick} />
   )
 
   const buttons = [
@@ -74,18 +75,19 @@ const App: React.FC = () => {
       text: '开始',
       type: 'success',
       handleClick: timerStart
-    },{
+    }, {
       text: '暂停',
       type: 'danger',
       handleClick: timerStop
-    },{
+    }, {
       text: '重置',
       type: 'default',
       handleClick: timerReset
-    },
+    }
   ]
   const buttonsItem = buttons.map(button =>
-    <Button key={button.text} type={button.type} text={button.text} handleClick={button.handleClick}/>
+    <Button key={button.text} type={button.type} text={button.text}
+            handleClick={button.handleClick} />
   )
 
   return (
